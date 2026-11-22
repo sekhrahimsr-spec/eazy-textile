@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eazy Textile</title><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#faf6ee"><link rel="apple-touch-icon" href="icon-192.png">
+<style>
+:root{--bg:#faf6ee;--card:rgba(255,255,255,.72);--tx:#241b2e;--mu:#6b5f7a;--bd:rgba(255,255,255,.75);--ln:rgba(70,40,90,.1);--ac:#8e2de2;--ac2:#f5576c;--gr:#12805a;--rd:#d63447;--b1:#ff9ec7;--b2:#9db8ff;--b3:#ffd38a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);min-height:100vh;color:var(--tx);font:15px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{padding:16px 14px 6px;font-weight:800;font-size:24px}.brand{background:linear-gradient(90deg,var(--ac),var(--ac2),#ff9a3c);-webkit-background-clip:text;background-clip:text;color:transparent}header small{display:block;color:var(--mu);font-weight:400;font-size:12px}
+nav{display:flex;gap:6px;overflow-x:auto;padding:6px 14px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--card);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);z-index:5}
+nav button{white-space:nowrap;border:1px solid var(--bd);background:var(--card);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:var(--tx);padding:8px 12px;border-radius:20px;font-size:14px}
+nav button.on{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;border-color:transparent;box-shadow:0 4px 14px #8e2de255}
+main{padding:10px 14px 90px;max-width:900px;margin:auto}
+.g{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}@media(min-width:700px){.g{grid-template-columns:repeat(4,1fr)}}
+.c{background:linear-gradient(135deg,var(--t,transparent),var(--card) 70%);border:1px solid var(--bd);border-radius:16px;padding:12px;-webkit-backdrop-filter:blur(16px) saturate(160%);backdrop-filter:blur(16px) saturate(160%);box-shadow:0 8px 24px rgba(80,40,120,.12),inset 0 1px 0 rgba(255,255,255,.5)}.g .c:nth-child(4n+1){--t:rgba(255,105,180,.35)}.g .c:nth-child(4n+2){--t:rgba(90,140,255,.35)}.g .c:nth-child(4n+3){--t:rgba(255,170,60,.35)}.g .c:nth-child(4n){--t:rgba(60,210,160,.35)}.c b{display:block;font-size:19px;margin-top:2px}.c span{color:var(--mu);font-size:12px}
+.pos{color:var(--gr)}.neg{color:var(--rd)}
+h3{margin:18px 0 8px;font-size:15px}
+.w{overflow-x:auto;background:var(--card);border:1px solid var(--bd);border-radius:16px;-webkit-backdrop-filter:blur(16px) saturate(160%);backdrop-filter:blur(16px) saturate(160%);box-shadow:0 8px 24px rgba(80,40,120,.12),inset 0 1px 0 rgba(255,255,255,.5)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--ln);white-space:nowrap}th{color:var(--mu);font-weight:600;font-size:12px}tr:last-child td{border:0}.r{text-align:right}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 4px}
+.btn{border:0;background:linear-gradient(135deg,var(--ac),var(--ac2));box-shadow:0 4px 14px #8e2de244;color:#fff;padding:10px 14px;border-radius:12px;font-size:14px;font-weight:600}.btn.o{background:var(--card);color:var(--tx);border:1px solid var(--bd);box-shadow:none;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.x{background:none;border:0;color:var(--rd);font-size:16px}
+#fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:6;box-shadow:0 4px 14px #0004;border-radius:28px;padding:14px 20px}
+#md{position:fixed;inset:0;background:#1a0f2e88;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);display:none;align-items:flex-end;justify-content:center;z-index:9}
+#md.on{display:flex}#sh{background:var(--card);-webkit-backdrop-filter:blur(28px) saturate(170%);backdrop-filter:blur(28px) saturate(170%);border:1px solid var(--bd);background-color:rgba(255,255,255,.45);width:100%;max-width:520px;border-radius:18px 18px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));max-height:92vh;overflow:auto}
+label{display:block;font-size:12px;color:var(--mu);margin:8px 0 3px}input,select{width:100%;padding:10px;border:1px solid var(--bd);border-radius:10px;background:rgba(255,255,255,.35);color:var(--tx);font-size:16px}
+.row{display:flex;gap:8px}.row>*{flex:1}.tot{margin:10px 0;font-weight:700}
+.tag{font-size:11px;padding:2px 7px;border-radius:9px;background:var(--bd)}
+input.s{margin:6px 0;max-width:260px}
+</style></head><body>
+<header><span class="brand">🧵 Eazy Textile</span><small>Purchases · Sales · Stock · Dues · Expenses · Profit</small></header>
+<nav id="nav"></nav><main id="app"></main>
+<button class="btn" id="fab">＋ New entry</button>
+<div id="md"><div id="sh"></div></div>
+<script>
+const K='textile_biz_v1';let S={tx:[]};
+try{S=JSON.parse(localStorage.getItem(K))||S}catch(e){}
+const localSave=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}};const save=()=>{localSave();queueSync()};
+const $=s=>document.querySelector(s),N=v=>+v||0;
+const rs=n=>(n<0?'-':'')+'₹'+Math.round(Math.abs(n)).toLocaleString('en-IN');
+const cls=n=>n>0?'pos':n<0?'neg':'';
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const today=()=>new Date().toISOString().slice(0,10);
+const TN={P:'Purchase',S:'Sale',PS:'Paid to supplier',PC:'Received from customer',E:'Expense',SO:'Old supplier due',CO:'Old customer due',OS:'Existing stock'};
+let tab='Dashboard',q='';
+const tabs=['Dashboard','Stock','Suppliers','Customers','Purchases','Sales','Expenses','Profit & Loss'];
+const of=t=>S.tx.filter(x=>x.t===t);
+const sum=(a,f)=>a.reduce((s,x)=>s+f(x),0);
+function stock(){const m={};
+ S.tx.forEach(x=>{if(x.t!=='P'&&x.t!=='S'&&x.t!=='OS')return;const k=x.i.toLowerCase();const o=m[k]||(m[k]={n:x.i,pq:0,pc:0,sq:0,sv:0});
+  if(x.t==='P'||x.t==='OS'){o.pq+=x.q;o.pc+=x.q*x.r}else{o.sq+=x.q;o.sv+=x.q*x.r}});
+ return Object.values(m).map(o=>{o.avg=o.pq?o.pc/o.pq:0;o.qty=o.pq-o.sq;o.val=Math.max(o.qty,0)*o.avg;o.cogs=o.sq*o.avg;return o})}
+function parties(kind){const m={};
+ S.tx.forEach(x=>{const mine=kind==='S'?['P','PS','SO']:['S','PC','CO'];if(!mine.includes(x.t))return;
+  const k=x.p.toLowerCase();const o=m[k]||(m[k]={n:x.p,bill:0,paid:0,last:''});
+  if(x.t==='P'||x.t==='S'){o.bill+=x.a;o.paid+=x.m}else if(x.t==='SO'||x.t==='CO')o.bill+=x.a;else o.paid+=x.a;o.last=x.d>o.last?x.d:o.last});
+ return Object.values(m).map(o=>(o.bal=o.bill-o.paid,o))}
+function totals(){const st=stock(),sl=of('S'),pu=of('P'),ex=of('E');
+ const sales=sum(sl,x=>x.q*x.r),salesG=sum(sl,x=>x.a),purch=sum(pu,x=>x.q*x.r),exp=sum(ex,x=>x.a),cogs=sum(st,o=>o.cogs);
+ const sup=parties('S'),cus=parties('C');
+ const cash=sum(sl,x=>x.m)+sum(of('PC'),x=>x.a)-sum(pu,x=>x.m)-sum(of('PS'),x=>x.a)-exp;
+ return{st,sales,salesG,purch,exp,cogs,gross:sales-cogs,profit:sales-cogs-exp,stockVal:sum(st,o=>o.val),
+  supDue:sum(sup,o=>Math.max(o.bal,0)),supAdv:sum(sup,o=>Math.max(-o.bal,0)),cusDue:sum(cus,o=>Math.max(o.bal,0)),cusAdv:sum(cus,o=>Math.max(-o.bal,0)),cash,sup,cus}}
+const card=(l,v,c)=>`<div class="c"><span>${l}</span><b class="${c||''}">${v}</b></div>`;
+const tbl=(h,rows,empty)=>`<div class="w"><table><tr>${h.map(x=>`<th class="${x[0]=='#'?'r':''}">${x.replace('#','')}</th>`).join('')}</tr>${rows.length?rows.join(''):`<tr><td colspan="${h.length}" style="color:var(--mu)">${empty||'Nothing yet'}</td></tr>`}</table></div>`;
+const search=()=>`<input class="s" placeholder="Search…" value="${esc(q)}" oninput="q=this.value;render(1)">`;
+const hit=s=>!q||s.toLowerCase().includes(q.toLowerCase());
+const del=id=>`<button class="x" onclick="delTx(${id})" aria-label="Delete">✕</button>`;
+function delTx(id){if(confirm('Delete this entry?')){S.tx=S.tx.filter(x=>x.id!==id);(S.del=S.del||[]).push(id);save();render()}}
+function partyTable(kind){const T=totals(),L=(kind==='S'?T.sup:T.cus).filter(o=>hit(o.n)).sort((a,b)=>b.bal-a.bal);
+ const who=kind==='S'?'supplier':'customer';
+ return `<div class="g">${kind==='S'?card('Total due to pay',rs(T.supDue),'neg')+card('Advance paid to suppliers',rs(T.supAdv),'pos'):card('Total due from customers',rs(T.cusDue),'pos')+card('Advance held from customers',rs(T.cusAdv),'neg')}</div>
+ <div class="bar"><button class="btn" onclick="openForm('${kind==='S'?'PS':'PC'}')">${kind==='S'?'Pay supplier':'Receive payment / advance'}</button><button class="btn o" onclick="openForm('${kind==='S'?'SO':'CO'}')">＋ Add old pending due</button></div>${search()}
+ ${tbl([who[0].toUpperCase()+who.slice(1),'#Billed','#Paid','#Balance','Last'],L.map(o=>`<tr><td>${esc(o.n)}</td><td class="r">${rs(o.bill)}</td><td class="r">${rs(o.paid)}</td><td class="r ${kind==='S'?cls(-o.bal):cls(o.bal)}"><b>${rs(Math.abs(o.bal))}</b> ${o.bal>0?(kind==='S'?'due':'due'):o.bal<0?'advance':''}</td><td>${o.last}</td></tr>`),'No '+who+'s yet — add an old due or a '+(kind==='S'?'purchase':'sale'))}
+ <h3>Old pending dues entered</h3>${tbl(['Date',who[0].toUpperCase()+who.slice(1),'#Amount',''],of(kind==='S'?'SO':'CO').map(x=>`<tr><td>${x.d}</td><td>${esc(x.p)}</td><td class="r">${rs(x.a)}</td><td>${del(x.id)}</td></tr>`),'None yet — use “Add old pending due” for balances from before you started using this app')}`}
+function txList(t,h,row){const L=of(t).filter(x=>hit([x.p,x.i,x.n].join(' '))).sort((a,b)=>b.d.localeCompare(a.d)||b.id-a.id);
+ return `<div class="bar"><button class="btn" onclick="openForm('${t}')">＋ New ${TN[t].toLowerCase()}</button></div>${search()}${tbl(h,L.map(row))}`}
+const views={
+ Dashboard(){const T=totals(),low=T.st.filter(o=>o.qty<=2);
+  const rec=[...S.tx].sort((a,b)=>b.id-a.id).slice(0,8);
+  return `<div class="g">${card('Sales (ex-GST)',rs(T.sales))+card('Purchases',rs(T.purch))+card('Expenses',rs(T.exp))+card('Net profit',rs(T.profit),cls(T.profit))}
+  ${card('Supplier due',rs(T.supDue),'neg')+card('Customer due',rs(T.cusDue),'pos')+card('Stock value',rs(T.stockVal))+card('Cash in hand',rs(T.cash),cls(T.cash))}
+  ${card('Customer advance',rs(T.cusAdv))+card('Supplier advance',rs(T.supAdv))+card('Gross profit',rs(T.gross),cls(T.gross))+card('Items in stock',T.st.filter(o=>o.qty>0).length)}</div>
+  ${low.length?`<h3>⚠ Low / out of stock</h3><div class="c">${low.map(o=>`${esc(o.n)}: <b>${o.qty}</b>`).join(' · ')}</div>`:''}
+  <h3>Recent entries</h3>${tbl(['Date','Type','Party / Item','#Amount'],rec.map(x=>`<tr><td>${x.d}</td><td><span class="tag">${TN[x.t]}</span></td><td>${esc(x.p||'')} ${esc(x.i||'')}</td><td class="r">${rs(x.a)}</td></tr>`),'Tap “＋ New entry” to begin')}
+  <div class="bar" style="margin-top:16px"><button class="btn o" onclick="backup()">⬇ Backup data</button><button class="btn o" onclick="$('#rf').click()">⬆ Restore</button><input id="rf" type="file" accept=".json" hidden onchange="restore(this)"></div>
+  <h3>☁ Google Drive auto-sync</h3><div class="c"><span>Status: <b id="gs">${esc(G.st)}</b></span><label>Google Client ID (one-time setup — see README)</label><input id="cid" value="${esc(G.id)}" placeholder="xxxx.apps.googleusercontent.com"><div class="bar"><button class="btn" onclick="gConnect()">${G.on?'Reconnect':'Connect Google Drive'}</button><button class="btn o" onclick="doSync()">Sync now</button></div></div>`},
+ Stock(){const T=totals(),L=T.st.filter(o=>hit(o.n));
+  return `<div class="g">${card('Stock value (at cost)',rs(T.stockVal))+card('Designs / items',T.st.length)}</div><div class="bar"><button class="btn" onclick="openForm('OS')">＋ Add existing stock</button></div>${search()}
+  ${tbl(['Item','#Bought','#Sold','#In stock','#Avg cost','#Value'],L.map(o=>`<tr><td>${esc(o.n)}</td><td class="r">${o.pq}</td><td class="r">${o.sq}</td><td class="r ${o.qty<=2?'neg':''}"><b>${o.qty}</b></td><td class="r">${rs(o.avg)}</td><td class="r">${rs(o.val)}</td></tr>`),'Add your existing stock, or record a purchase')}
+  <h3>Existing stock entered</h3>${tbl(['Date','Item','#Qty','#Cost/pc','#Value',''],of('OS').map(x=>`<tr><td>${x.d}</td><td>${esc(x.i)}</td><td class="r">${x.q}</td><td class="r">${rs(x.r)}</td><td class="r">${rs(x.q*x.r)}</td><td>${del(x.id)}</td></tr>`),'None yet — tap “Add existing stock” for what is already in your shop')}`},
+ Suppliers:()=>partyTable('S'),Customers:()=>partyTable('C'),
+ Purchases:()=>txList('P',['Date','Supplier','Item','#Qty','#Rate','#Total','#Paid','#Due',''],x=>`<tr><td>${x.d}</td><td>${esc(x.p)}</td><td>${esc(x.i)}</td><td class="r">${x.q}</td><td class="r">${rs(x.r)}</td><td class="r">${rs(x.a)}</td><td class="r">${rs(x.m)}</td><td class="r neg">${rs(x.a-x.m)}</td><td>${del(x.id)}</td></tr>`),
+ Sales:()=>txList('S',['Date','Customer','Item','#Qty','#Rate','#Total','#Received','#Due',''],x=>`<tr><td>${x.d}</td><td>${esc(x.p)}</td><td>${esc(x.i)}</td><td class="r">${x.q}</td><td class="r">${rs(x.r)}</td><td class="r">${rs(x.a)}</td><td class="r">${rs(x.m)}</td><td class="r pos">${rs(x.a-x.m)}</td><td>${del(x.id)}</td></tr>`),
+ Expenses(){const by={};of('E').forEach(x=>by[x.p]=(by[x.p]||0)+x.a);
+  return `<div class="g">${card('Total expenses',rs(sum(of('E'),x=>x.a)),'neg')}</div><h3>By category</h3>${tbl(['Category','#Amount'],Object.entries(by).map(([k,v])=>`<tr><td>${esc(k)}</td><td class="r">${rs(v)}</td></tr>`))}<h3>All expenses</h3>`+
+  txList('E',['Date','Category','Note','#Amount',''],x=>`<tr><td>${x.d}</td><td>${esc(x.p)}</td><td>${esc(x.n)}</td><td class="r">${rs(x.a)}</td><td>${del(x.id)}</td></tr>`)},
+ 'Profit & Loss'(){const T=totals(),by={};of('E').forEach(x=>by[x.p]=(by[x.p]||0)+x.a);
+  const R=(l,v,b)=>`<tr><td>${b?'<b>'+l+'</b>':l}</td><td class="r ${b?cls(v):''}">${b?'<b>'+rs(v)+'</b>':rs(v)}</td></tr>`;
+  return tbl(['Profit & Loss','#Amount'],[R('Sales (excluding GST)',T.sales),R('Cost of goods sold (avg cost)',-T.cogs),R('Gross profit',T.gross,1),...Object.entries(by).map(([k,v])=>R('Expense: '+esc(k),-v)),R('Net profit',T.profit,1)])+
+  `<p style="color:var(--mu);font-size:12.5px">Margin: ${T.sales?(T.profit/T.sales*100).toFixed(1):0}% · GST collected/paid is kept out of profit. Cost uses average purchase price per item.</p>`}
+};
+function render(keep){const a=$('#app'),f=document.activeElement,pos=f&&f.selectionStart;
+ $('#nav').innerHTML=tabs.map(t=>`<button class="${t===tab?'on':''}" onclick="tab='${t}';q='';render()">${t}</button>`).join('');
+ a.innerHTML=views[tab]();if(keep){const s=a.querySelector('input.s');if(s){s.focus();s.setSelectionRange(pos,pos)}}}
+// ---- forms
+const F={P:['p:Supplier name','i:Item / design','q:Quantity (pcs)','r:Rate per piece (₹)','g:GST %','m:Paid now (₹)'],
+ S:['p:Customer name','i:Item / design','q:Quantity (pcs)','r:Rate per piece (₹)','g:GST %','m:Received now (₹)'],
+ OS:['i:Item / design','q:Quantity in stock (pcs)','r:Cost per piece (₹)'],SO:['p:Supplier name','a:Pending due amount (₹)'],CO:['p:Customer name','a:Pending due amount (₹)'],PS:['p:Supplier name','a:Amount paid (₹)'],PC:['p:Customer name','a:Amount received (₹) — advance or due'],E:['p:Category','a:Amount (₹)']};
+function openForm(t){if(!t)t=null;
+ if(!t){$('#sh').innerHTML=`<h3 style="margin-top:0">New entry</h3><div class="g" style="grid-template-columns:1fr 1fr">${Object.keys(TN).map(k=>`<button class="btn o" onclick="openForm('${k}')">${TN[k]}</button>`).join('')}</div>`;$('#md').classList.add('on');return}
+ const dl=t==='E'?['Rent','Salary','Transport','Packing','Electricity','Marketing','Repairs','Other']:(t==='P'||t==='PS'||t==='SO'?parties('S'):parties('C')).map(o=>o.n);
+ const items=stock().map(o=>o.n);
+ $('#sh').innerHTML=`<h3 style="margin-top:0">${TN[t]}</h3><form onsubmit="return false"><label>Date</label><input type="date" id="f_d" value="${today()}">
+ ${F[t].map(s=>{const[k,l]=s.split(':');const txt=k==='p'||k==='i';return`<label>${l}</label><input id="f_${k}" ${txt?`list="dl_${k}"`:'type="number" inputmode="decimal" min="0" step="any"'} ${k==='g'?'value="0"':''} oninput="calc()">`}).join('')}
+ <label>Note (optional)</label><input id="f_n">
+ <datalist id="dl_p">${dl.map(x=>`<option value="${esc(x)}">`).join('')}</datalist><datalist id="dl_i">${items.map(x=>`<option value="${esc(x)}">`).join('')}</datalist>
+ <div class="tot" id="tot"></div><div class="row"><button class="btn o" onclick="closeM()">Cancel</button><button class="btn" onclick="saveForm('${t}')">Save</button></div></form>`;
+ $('#md').classList.add('on');window._t=t}
+function calc(){const t=window._t;if(t!=='P'&&t!=='S'&&t!=='OS')return;const v=id=>N($('#f_'+id)?.value);
+ const base=v('q')*v('r'),tot=base*(1+v('g')/100),m=v('m');$('#tot').innerHTML=`Total ${rs(tot)}${m?` · ${t==='P'?'Due to pay':'Due from customer'} ${rs(tot-m)}`:''}`;
+ if(t==='S'){const o=stock().find(o=>o.n.toLowerCase()===($('#f_i').value||'').toLowerCase());if(o&&v('q')>o.qty)$('#tot').innerHTML+=`<br><span class="neg">Only ${o.qty} in stock</span>`}}
+function closeM(){$('#md').classList.remove('on')}
+function saveForm(t){const v=id=>($('#f_'+id)?.value||'').trim(),x={id:Date.now(),d:v('d')||today(),t,p:v('p'),i:v('i'),n:v('n'),q:N(v('q')),r:N(v('r')),g:N(v('g')),m:N(v('m')),a:N(v('a'))};
+ if(!x.p&&t!=='OS')return alert('Please enter a name / category');
+ if(t==='P'||t==='S'||t==='OS'){if(!x.i||x.q<=0||x.r<=0)return alert('Enter item, quantity and rate');x.a=x.q*x.r*(1+x.g/100)}
+ else if(x.a<=0)return alert('Enter an amount');
+ if(t==='PS'||t==='PC')x.m=x.a;
+ S.tx.push(x);save();closeM();render()}
+function backup(){const b=new Blob([JSON.stringify(S)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='textile-data-'+today()+'.json';a.click()}
+function restore(el){const f=el.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(d.tx){S=d;save();render()}}catch(e){alert('Invalid file')}};r.readAsText(f)}
+// ---- Google Drive auto-sync (hidden app folder, scope drive.appdata)
+let G={id:localStorage.getItem('gd_cid')||'',tok:null,exp:0,fid:null,on:!!localStorage.getItem('gd_on'),st:'Not connected',c:null};
+function gStatus(s){G.st=s;const e=$('#gs');if(e)e.textContent=s}
+function loadG(){return new Promise((res,rej)=>{if(window.google&&google.accounts)return res();const s=document.createElement('script');s.src='https://accounts.google.com/gsi/client';s.onload=res;s.onerror=()=>rej(new Error('Needs internet / https hosting'));document.head.appendChild(s)})}
+function gAuth(prompt){return new Promise((res,rej)=>{
+ if(!G.id)return rej(new Error('Enter Client ID first'));
+ if(!G.c)G.c=google.accounts.oauth2.initTokenClient({client_id:G.id,scope:'https://www.googleapis.com/auth/drive.appdata',callback:()=>{}});
+ G.c.callback=r=>{if(r.error)rej(new Error(r.error));else{G.tok=r.access_token;G.exp=Date.now()+(r.expires_in-60)*1000;res()}};
+ G.c.error_callback=e=>rej(new Error(e.type||'popup blocked'));
+ G.c.requestAccessToken({prompt})})}
+async function ensure(){await loadG();if(!G.tok||Date.now()>G.exp)await gAuth('')}
+async function api(url,opt={}){await ensure();const r=await fetch(url,{...opt,headers:{Authorization:'Bearer '+G.tok,...(opt.headers||{})}});if(!r.ok)throw new Error('Drive error '+r.status);return r}
+async function findF(){if(G.fid)return G.fid;const r=await api('https://www.googleapis.com/drive/v3/files?spaces=appDataFolder&fields=files(id)&q='+encodeURIComponent("name='eazy-textile.json'"));G.fid=((await r.json()).files[0]||{}).id||null;return G.fid}
+function merge(a,b){const del=[...new Set([...(a.del||[]),...(b.del||[])])],m=new Map();[...(a.tx||[]),...(b.tx||[])].forEach(x=>m.set(x.id,x));return{tx:[...m.values()].filter(x=>!del.includes(x.id)),del}}
+async function pull(){const id=await findF();if(!id)return;const d=await(await api('https://www.googleapis.com/drive/v3/files/'+id+'?alt=media')).json();S=merge(S,d);localSave()}
+async function push(){const body=JSON.stringify(S),id=await findF();
+ if(id)await api('https://www.googleapis.com/upload/drive/v3/files/'+id+'?uploadType=media',{method:'PATCH',headers:{'Content-Type':'application/json'},body});
+ else{const b='ezb',mp='--'+b+'\r\nContent-Type: application/json\r\n\r\n'+JSON.stringify({name:'eazy-textile.json',parents:['appDataFolder']})+'\r\n--'+b+'\r\nContent-Type: application/json\r\n\r\n'+body+'\r\n--'+b+'--';
+  const r=await api('https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id',{method:'POST',headers:{'Content-Type':'multipart/related; boundary='+b},body:mp});G.fid=(await r.json()).id}}
+async function doSync(){try{gStatus('Syncing…');await pull();await push();gStatus('✓ Synced '+new Date().toLocaleTimeString());render()}catch(e){gStatus('⚠ '+e.message+' — tap Sync now / Reconnect')}}
+let gt;function queueSync(){if(!G.on)return;clearTimeout(gt);gStatus('Syncing…');gt=setTimeout(doSync,2500)}
+async function gConnect(){const v=($('#cid').value||'').trim();if(!v)return alert('Paste your Google Client ID first (see README)');
+ G.id=v;G.c=null;localStorage.setItem('gd_cid',v);
+ try{gStatus('Connecting…');await loadG();await gAuth('consent');G.on=true;localStorage.setItem('gd_on','1');await doSync()}catch(e){gStatus('⚠ '+e.message)}}
+if(G.on&&G.id){gStatus('Reconnecting…');ensure().then(doSync).catch(()=>gStatus('Tap Reconnect to resume sync'))}
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&G.on&&G.tok)doSync()});
+$('#fab').onclick=()=>openForm();$('#md').onclick=e=>{if(e.target.id==='md')closeM()};
+render();
+if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script></body></html>

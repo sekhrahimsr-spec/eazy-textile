@@ -1,0 +1,5 @@
+{"name":"eazy-textile","version":"1.0.0","description":"Eazy Textile business manager","author":"Eazy Textile","main":"electron/main.js",
+"scripts":{"prep":"node scripts/prep.js","win":"electron-builder --win nsis portable --publish never"},
+"dependencies":{"@capacitor/android":"^6.1.0","@capacitor/core":"^6.1.0"},
+"devDependencies":{"@capacitor/cli":"^6.1.0","electron":"^31.0.0","electron-builder":"^24.13.3"},
+"build":{"appId":"com.eazytextile.app","productName":"Eazy Textile","files":["electron/**","index.html","build/icon.png"],"directories":{"output":"dist"},"win":{"icon":"build/icon.png"}}}
